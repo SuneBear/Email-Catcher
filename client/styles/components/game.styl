@@ -1,0 +1,232 @@
+@keyframes animatedCloud
+  to
+    background-position: 100% 0
+
+@keyframes errorBlink
+  to
+    color: $red
+
+.game
+  &,
+  & > .game-container
+    width: 100%
+    height: 100%
+
+  $panelWrapIndex = 1
+  $containerIndex = 2
+  $panelIndex = 4
+  $hudIndex = 5
+
+  $iconSize = 26px
+
+  .img-icon
+    background-image: url(../images/game/icons@2x.png)
+    background-size: $iconSize*2 $iconSize*20
+
+   .error-blink
+    animation: errorBlink .33s 3
+
+  .game-panels
+    position: absolute
+    z-index: -1
+    width: 100%
+    padding-top: 150px
+    transform: translate3d(0, -100px, 0)
+    // transition: all $timeBase
+
+    &.is-on
+      z-index: $panelIndex
+      transform: translate3d(0, 0, 0)
+
+    .panel-header
+      text-align: center
+      padding: 10px 0 20px
+      border-bottom: 1px dotted darken($back, 20%)
+
+      .game-name
+        font-size: 20px
+
+    .panel-content
+      text-align: center
+      padding: 20px 0 10px
+
+      > * + *
+        margin-top: 20px
+
+      .button,
+      input
+        width: 250px
+
+
+    > [class*='panel-']
+      $width = 600px
+
+      position: absolute
+      left: 50%
+      width: $width
+      padding: 20px
+      opacity: 0
+      margin-left: -($width/2)
+      border: 1px dotted darken($back, 20%)
+      background: alpha($white, 93%)
+      border-radius: 3px
+      box-shadow: 2px 2px 0px 0px rgba(0,0,0,.05)
+      // transition: opacity $timeBase
+      transform: scale(0)
+
+      &.is-active
+        z-index: $panelIndex
+        opacity: 1
+        transform: scale(1)
+
+    .panel-welcome
+      null
+
+  .game-hud
+    position: absolute
+    z-index: $hudIndex
+    width: 100%
+    line-height: $iconSize
+    padding: 20px 22px
+    transform: translate3d(0, -80px, 0)
+    transition: all $timeBase
+
+    &.is-on
+      transform: translate3d(0, 0, 0)
+
+      .info-combos
+        display: block
+
+    .pause-toggle
+      width: $iconSize
+      height: $iconSize
+      background-position: 0 0
+
+      &.is-paused
+        background-position: (-($iconSize)) 0
+
+    .fullscreen-toggle
+      width: $iconSize
+      height: $iconSize
+      background-position: 0 (-($iconSize))
+
+      &.is-fullscreen
+        background-position: (-($iconSize)) (-($iconSize))
+
+    [class*=info-],
+    [class*=-toggle]
+      display: inline-block
+      vertical-align: top
+      font-size: 22px
+
+      & + *
+        margin-left: 24px
+
+    [class*=-toggle]
+      position: relative
+      cursor: pointer
+
+      &:hover
+        opacity: 0.85
+
+    .bombs-icon
+      position: relative
+      top: -2px
+      float: left
+      width: $iconSize
+      height: $iconSize
+      background-position: 0 (-($iconSize * 2))
+
+    .info-bombs small
+      margin: 0 5px
+      font-size: 70%
+
+    .info-score .score-num
+      margin-left: 7px
+
+    .info-combos
+      display: none
+      position: absolute
+      right: 24px
+      top: 60px
+      padding: 4px 6px 3px
+      background: #faee00
+      color: #00a0e9
+      border-radius: 3px
+      opacity: 0
+      transform: scale(0.7)
+      transition: all 0
+
+      &:before,
+      &:after
+      .border-pixel:before,
+      .border-pixel:after
+        content: ' '
+        position: absolute
+        width: 3px
+        height: 3px
+        background: $brand
+
+      &:after
+        left: 0
+        top: 0
+
+      &:before
+        right: 0
+        bottom: 0
+
+      .border-pixel:before
+        right: 0
+        top: 0
+
+      .border-pixel:after
+        left: 0
+        bottom: 0
+
+      &.is-on
+        opacity: 1
+        transform: scale(1)
+        transition: all $timeBase
+
+      small
+        margin: 0 5px
+        font-size: 70%
+
+  .game-container
+    position: relative
+    background-color: $brand
+    background-image: url(../images/game/background@2x.png)
+    background-size: auto 900px
+    background-position: center bottom
+    background-repeat: repeat-x
+
+    &:before
+      content: ' '
+      position: absolute
+      z-index: -1
+      width: 100%
+      height: 100%
+      background: alpha(#1baff5, 80%)
+      opacity: 0
+      transition: opacity $timeBase
+
+    &:after
+      content: ' '
+      position: absolute
+      bottom: 225px
+      z-index: 1
+      width: 100%
+      height: 185px
+      background: url(../images/game/cloud@2x.png)
+      background-size: 1908px 185px
+      background-position: 0 0
+      background-repeat: repeat-x
+      animation: animatedCloud 30s linear infinite alternate
+
+    &.with-panel:before
+      z-index: $containerIndex + 1
+      opacity: 1
+
+    &.is-paused
+      &:after
+        animation-play-state: paused

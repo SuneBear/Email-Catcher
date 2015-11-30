@@ -1,0 +1,73 @@
+{
+  "name": "Email-Catcher",
+  "version": "0.0.1",
+  "description": "A pixel art casual game about catching emails based on Phaser.",
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SuneBear/Email-Catcher.git"
+  },
+  "author": {
+    "name": "Sune Bear",
+    "email": "hi@sunebear.com",
+    "url": "http://sunebear.com"
+  },
+  "scripts": {
+    "build": "gulp build --production",
+    "start": "gulp serve-production",
+    "test": "standard"
+  },
+  "browser": {
+    "config": "./client/scripts/config.js",
+    "framework": "./client/scripts/framework/main.js",
+    "locales": "./client/scripts/locales/main.js",
+    "uis": "./client/scripts/uis/main.js",
+    "utils": "./client/scripts/utils/main.js",
+    "game": "./client/scripts/game/main.js",
+    "game.engine": "./client/scripts/game/engine.js"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-csso": "^1.0.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jade": "^1.0.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev-all": "^0.8.21",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-sequence": "^0.3.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "koa-livereload": "^0.1.23",
+    "opn": "^1.0.2",
+    "require-dir": "^0.3.0",
+    "through2": "^2.0.0",
+    "yargs": "^3.19.0"
+  },
+  "dependencies": {
+    "co-fs": "^1.2.0",
+    "gamepad-micro": "^0.1.10",
+    "history-events": "^1.0.4",
+    "howler": "^1.1.28",
+    "jquery": "^2.1.4",
+    "jquery.animate-number": "0.0.12",
+    "keycode": "^2.1.0",
+    "koa": "^0.21.0",
+    "koa-router": "^5.1.2",
+    "koa-static": "^1.4.9",
+    "lodash": "^3.10.1",
+    "main-loop": "^3.1.0",
+    "normalize.css": "^3.0.3",
+    "screenfull": "^3.0.0",
+    "stage-js": "^0.8.3",
+    "virtual-dom": "^2.1.1",
+    "visibilityjs": "^1.2.1"
+  }
+}

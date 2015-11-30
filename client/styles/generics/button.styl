@@ -1,0 +1,19 @@
+.button
+  display: inline-block
+  cursor: pointer
+  padding: 7px 14px
+  border: 1px dotted $front
+  color: $front
+  border-radius: 3px
+  transition: all $timeBase
+
+  &:hover
+  &:focus
+  &.is-focused
+    border-color: darken($front, 20%)
+    color: darken($front, 20%)
+    background: alpha($brand, 10%)
+    outline: none
+
+  &:active
+    box-shadow: inset 0 0 2px alpha($black, 20%)

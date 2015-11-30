@@ -1,0 +1,9 @@
+script(id="script-config",
+  data-name=pkg.name,
+  data-version=pkg.version,
+  data-env=env || 'dev'
+)
+if env == 'build'
+  script(src='./scripts/build.js')
+else
+  script(src='./scripts/main.js')
