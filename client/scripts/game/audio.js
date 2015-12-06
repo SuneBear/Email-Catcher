@@ -9,7 +9,7 @@ let audio = {
   onLoadCallback(){},
 
   onload() {
-    if (this.loads === 3 && !this.loaded) {
+    if (this.loads === 2 && !this.loaded) {
       this.onLoadCallback()
       this.loaded = true
     }
@@ -52,8 +52,8 @@ let audio = {
       miss: [183000, 2000]
     },
     onload: () => {
-      audio.loads++
-      audio.onload()
+      // audio.loads++
+      // audio.onload()
     }
   })
 }
