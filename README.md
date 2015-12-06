@@ -28,10 +28,9 @@ Controls
 - **Esc / P** - Pasue or Resume
 
 ### Gamepad controls
-- **Enter** - Start
-- **Horizontal Arrow** - Move your role
-- **Spacebar** - Set off a bomb
-- **Esc / P** - Pasue or Resume
+- **Start** - Start, Pasue or Resume
+- **Left Stick / dPad** - Move your role
+- **X/Y/A/B** - Set off a bomb
 
 Running on local
 ====================
