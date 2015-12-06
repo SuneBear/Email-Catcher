@@ -1,7 +1,7 @@
 {
   "name": "Email-Catcher",
   "version": "0.0.1",
-  "description": "A pixel art casual game about catching emails based on Phaser.",
+  "description": "A pixel art casual game about catching emails based on Stage.js.",
   "license": "BSD",
   "repository": {
     "type": "git",

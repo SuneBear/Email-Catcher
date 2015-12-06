@@ -10,7 +10,7 @@ as far as possible from the top down.
 
 The game is over when the emails stack up to the top of the playing field.
 
-In order to get more fun, you can replace email texture with [Doge 🐕](http://sunebear.com/games/email-catcher?role=doge) , [Yuukiti 🐻](http://sunebear.com/games/email-catcher?role=yuukiti) or [Cosmo 🐱](http://sunebear.com/games/email-catcher?role=cosmo).
+In order to get more fun, you can replace the player texture with [Doge 🐕](http://sunebear.com/games/email-catcher?role=doge) , [Yuukiti 🐻](http://sunebear.com/games/email-catcher?role=yuukiti) or [Cosmo 🐱](http://sunebear.com/games/email-catcher?role=cosmo).
 
 In addition to fun, it has an important feature:
 
