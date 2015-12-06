@@ -1,6 +1,6 @@
 {
   "name": "Email-Catcher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A pixel art casual game about catching emails based on Stage.js.",
   "license": "BSD",
   "repository": {
