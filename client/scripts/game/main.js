@@ -3,7 +3,7 @@ import $ from 'jquery'
 import visibility from 'visibilityjs'
 import screenfull from 'screenfull'
 import GamepadMicro from 'gamepad-micro'
-import {l} from 'locales'
+import {l, locale} from 'locales'
 import {animateNumber} from 'uis'
 
 import engine from 'game.engine'

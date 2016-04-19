@@ -6,6 +6,7 @@ var csso     = require('gulp-csso')
 var rename   = require('gulp-rename')
 var uglify   = require('gulp-uglify')
 var RevAll   = require('gulp-rev-all')
+var ghPages  = require('gulp-gh-pages')
 var sequence = require('gulp-sequence')
 var imagemin = require('gulp-imagemin')
 
@@ -59,7 +60,12 @@ module.exports = function(gulp) {
     return gulp.src('build/**')
       .pipe(revAll.revision())
       .pipe(gulp.dest('build/_rev'))
-    })
+  })
+
+  gulp.task('deploy', function() {
+    return gulp.src('dist/_rev/**/*')
+      .pipe(ghPages())
+  })
 
   gulp.task('build', sequence(
     'dev',
