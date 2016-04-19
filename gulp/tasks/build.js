@@ -6,6 +6,7 @@ var csso     = require('gulp-csso')
 var rename   = require('gulp-rename')
 var uglify   = require('gulp-uglify')
 var RevAll   = require('gulp-rev-all')
+var ghPages  = require('gulp-gh-pages')
 var sequence = require('gulp-sequence')
 var imagemin = require('gulp-imagemin')
 
@@ -51,20 +52,14 @@ module.exports = function(gulp) {
     .pipe(gulp.dest('build/fonts'))
   })
 
-  gulp.task('revAll', function() {
-    var revAll = new RevAll({
-      dontRenameFile: [/^\/favicon.ico$/g, '.html'],
-      dontUpdateReference: [/\.js$/]
-    })
-    return gulp.src('build/**')
-      .pipe(revAll.revision())
-      .pipe(gulp.dest('build/_rev'))
-    })
+  gulp.task('deploy', function() {
+    return gulp.src('build/**/*')
+      .pipe(ghPages())
+  })
 
   gulp.task('build', sequence(
     'dev',
     ['build-index', 'build-styles', 'build-scripts',
-     'build-images', 'build-audios', 'build-fonts'],
-    'revAll'
+     'build-images', 'build-audios', 'build-fonts']
   ))
 }

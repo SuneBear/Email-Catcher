@@ -36,8 +36,8 @@ let config = {
 
   // Number
   numActObj: 7,
-  overAmount: 10,
-  goalScore: 500,
+  overAmount: 12,
+  goalScore: 1000,
 
   // Speed (align with percent)
   speedV: 0.003,
